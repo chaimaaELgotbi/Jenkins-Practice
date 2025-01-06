@@ -15,15 +15,6 @@
       command: docker rmi chaima2024/comingsoon
       ignore_errors: yes
 
-    - name: load Docker credentials from vault
-      ansible.builtin.include_vars:
-        file: docker_credentials.yml
-        name: docker_creds
-
-    - name: login to Docker Hub
-      command: docker login --username "{{ docker_creds.docker_username }}" --password "{{ docker_creds.docker_password }}"
-      ignore_errors: yes
-
     - name: build docker image using the Dockerfile
       command: docker build -t chaima2024/comingsoon .
 
