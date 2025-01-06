@@ -22,7 +22,7 @@
       command: docker tag chaima2024/comingsoon chaima2024/comingsoon:latest
 
     - name: Push Image to dockerhub
-      command: docker push -v chaima2024/comingsoon
+      command: docker push chaima2024/comingsoon
 
     - name: run container
       command: docker run -d --name web-container -p 5000:80 chaima2024/comingsoon
